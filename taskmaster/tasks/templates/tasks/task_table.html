@@ -1,0 +1,45 @@
+<table class="table is-striped is-hoverable">
+    <thead>
+        <tr>
+            <th>Id. tarea</th>
+            <th>Título</th>
+            <th>Fecha de entrega</th>
+            <th>Urgente</th>
+            <th>Prioridad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>
+
+                <a href="{% url 'edit_task' pk=task.pk %}" role="botton" class="buttom is-primary">
+                    {{ task.id }}
+                </a>
+            </td>
+            <td>
+                {% if forloop.first %}
+                <b> {{ task.title|capfirst|add:" ⚙" }} </b>
+                {% else %}
+                {{ task.title }}
+                {% endif %}
+            </td>
+            <td>
+                {% if task.due_date %}
+                {{ task.due_date }}
+                {% endif %}
+            </td>
+            <td>
+                {% if task.urgent %}
+                <b class="urgente"> Si </b>
+                {% else %}
+                <i class="no-urgente"> No </i>
+                {% endif %}
+            </td>
+            <td>
+                {{ task.get_priority_display }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

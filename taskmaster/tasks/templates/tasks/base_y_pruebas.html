@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+
+<head>
+    <title> {{ title }} </title>
+
+    <link rel="stylesheet" type='text/css' href="{% static 'tasks/custom.css' %}">
+
+</head>
+
+<body>
+    <h1 class="titulo">TaskMaster</h1>
+    <h2 class="subtitulo"> {{ title }} </h2>
+    <h2> No soy un subtitulo </h2>
+    <p class="subtitulo"> Yo sí soy un "subtítulo" </p>
+
+    <p> {% lorem 1 p %} </p>
+    <div class="fuera">
+        contefuera
+        <p class="dentro">
+            contenido
+        </p>
+    </div>
+
+
+    <section class="news">
+        <p>Ultimas noticias </p>
+        <div>
+            <p>Otro parrafo</p>
+        </div>
+    </section>
+
+    <div>
+        <button> Activado </button>
+        <button disabled> Desactivado </button>
+        <a href="https://python.org">Python</a>
+        <a href="https://github.com">Github</a>
+    </div>
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+    {% block content %}
+
+    {% endblock content %}
+    <p id="trademark">CopyRight TaskMaster 2024</p>
+</body>
+
+</html>

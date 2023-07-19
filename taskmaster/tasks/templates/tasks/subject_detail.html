@@ -1,0 +1,15 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<h2> {{ subject.name }} </h2>
+
+<p>Creado el {{ subject.created }}</p>
+<p>Actualizado por última vez el {{ subject.updated }}</p>
+
+<table>
+    {% for task in subject.tasks.all %}<tr>
+        <td>{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+    </tr>{% endfor %}
+</table>
+{% endblock content %}

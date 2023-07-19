@@ -1,0 +1,15 @@
+#trademark {
+    text-align: right;
+    border-top: 2px solid black;
+    font-weight: bolder;
+}
+
+.urgente {
+    font-weight: bolder;
+    color: rgb(255, 32, 32);
+}
+
+.no-urgente {
+    font-style: italic;
+    color: rgb(32, 188, 32);
+}
