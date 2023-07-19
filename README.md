@@ -95,11 +95,15 @@ En caso de que la tarea solicitada no exista, la API debe retornar un código de
  "message": "The requested task could not be found"
  }
 }
+```
+
 Método POST
 Una petición POST debe aceptar un cuerpo JSON que incluya la información de la nueva
 tarea a insertar en la base de datos (de manera análoga a como lo hace la interfaz web
 habitual). Siguiendo con el ejemplo anterior, la API aceptaría una entrada similar a la
 siguiente:
+
+```json
 {
  "name": "comprar fruta",
  "due_date": "2023-06-08",
